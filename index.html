@@ -135,6 +135,19 @@
                         <li><b>Gender:</b> Male</li>
                     </ul>
                     <button class="btn btn-theme-outline" id="downloadButton">Download CV</button>
+                    <script>
+                        document.getElementById("downloadButton").addEventListener("click", function() {
+                            var fileName = "cv.pdf";
+                            var filePath = "/assets/img/" + fileName;
+                            var link = document.createElement("a");
+                            link.href = filePath;
+                            link.download = fileName;
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+                        });
+                    </script>
+
 
                 </div>
             </div>
@@ -587,18 +600,7 @@
     </div>
     <!-- End footer -->
 
-    <script>
-        document.getElementById("downloadButton").addEventListener("click", function() {
-            var fileName = "CV.pdf";
-            var filePath = "/assets/img/" + fileName;
-            var link = document.createElement("a");
-            link.href = filePath;
-            link.download = fileName;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        });
-    </script>
+
 
 
 
